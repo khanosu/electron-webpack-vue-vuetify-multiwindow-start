@@ -26,7 +26,10 @@ app.on("ready", () => {
     win = null;
   });
 
-  win1 = new BrowserWindow();
+  win1 = new BrowserWindow({
+    width: 700,
+    height: 500
+  });
 
   win1.loadURL(
     url.format({
@@ -49,21 +52,6 @@ app.on("ready", () => {
     app.quit();
   });
 
-  win = new BrowserWindow();
-
-  win.loadURL(
-    url.format({
-      pathname: path.join(__dirname, "./index.html"),
-      protocol: "file:",
-      slashes: true
-    })
-  );
-
-  win.show();
-
-  win.on("closed", () => {
-    win = null;
-  });
 });
 
 const menuTemplate = [{
